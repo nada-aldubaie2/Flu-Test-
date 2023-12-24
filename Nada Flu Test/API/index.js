@@ -8,7 +8,12 @@ var cors = require("cors");
 const multer = require("multer");
 
 const app = express();
-app.use(cors()); 
+app.use(cors({
+  origin: ["https://deploy-mern-1whq.vercel.app"],
+  methods: ["POST","GET"],
+  credentials: true
+           }
+)); 
 app.use(bodyParser.json());
 
 const CONNECTION_STRING = "mongodb+srv://nadaxadmin:nada.xadmin@nada0x.fmyaxsn.mongodb.net/flutest?retryWrites=true&w=majority";
